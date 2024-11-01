@@ -1,0 +1,118 @@
+:root {
+    --primary-color: hsl(122, 83%, 42%);
+    --secondary-color: hsl(175, 87%, 54%);
+    --hover-color-primary: hsl(122, 100%, 42%);
+    --hover-color-secondary: hsl(175, 97%, 54%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+canvas {
+    border: 3px solid black;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    margin: 2rem;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.toolbar {
+    background-color: var(--primary-color);
+    border: 3px solid black;
+    border-top: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 805px;
+    border-radius: 0 0 10px 10px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.toolbar .left, .toolbar .right {
+    display: flex;
+    align-items: center;
+}
+.toolbar .left{
+    width: 50%;
+    justify-content: space-between;
+}
+h1{
+    color: #fff;
+}
+
+.toolbar > div > * {
+    border-radius: 10px;
+    border: 1px solid #18D35D;
+    padding: 5px 10px;
+    font-size: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .7s ease-out;
+    color: white;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+
+.toolbar > div > *:hover {
+    background-color: var(--hover-color-primary);
+}
+
+#decrease, #increase {
+    width: 3rem;
+}
+
+#color, #bgColor {
+    width: 50px;
+    height: 50px;
+    margin-left: 1rem;
+}
+
+#undo, #clear {
+    margin-left: 10px;
+    border: 1px solid #18D35D;
+}
+#undo:active, #clear:active{
+    transform: scale(0.98);
+}
+#undo {
+    background-color: var(--secondary-color);
+}
+
+#undo:hover {
+    background-color: var(--hover-color-secondary);
+}
+
+#clear {
+    background-color: hsla(0, 80%, 44%, 0.796);
+}
+
+#clear:hover {
+    background-color: hsla(0, 100%, 44%, 0.796);
+}
+
+#undo::before {
+    content: '↩️';
+    font-size: 1.5rem;
+}
+
+#clear::before {
+    content: '🗑️';
+    font-size: 1.5rem;
+}
